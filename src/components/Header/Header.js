@@ -164,15 +164,18 @@ const NavText = styled.span`
 const NavTextBold = styled.span`
   position: absolute;
   font-weight: bold;
-  transform: translateY(0%);
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
   transition: transform 0.2s;
-  &:hover {
-    transform: traslateY(0);
-  }
+
   `
   const NavWrapper = styled.span`
     &:hover > ${NavText} {
       transform: translateY(-100%)
+    }
+    &:hover > ${NavTextBold} {
+      transform: translateY(0%)
     }
   `
 
