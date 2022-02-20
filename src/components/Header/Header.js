@@ -20,12 +20,42 @@ const Header = () => {
           <Logo />
         </LogoWrapper>
         <DesktopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="/sale">
+            <NavWrapper>
+              <NavText>Sale</NavText>
+              <NavTextBold>Sale</NavTextBold>
+            </NavWrapper>
+          </NavLink>
+          <NavLink href="/new">
+            <NavWrapper>
+              <NavText>New&nbsp;Releases</NavText>
+              <NavTextBold>New&nbsp;Releases</NavTextBold>
+            </NavWrapper>
+          </NavLink>
+          <NavLink href="/men">
+            <NavWrapper>
+              <NavText>Men</NavText>
+              <NavTextBold>Men</NavTextBold>
+            </NavWrapper>
+          </NavLink>
+          <NavLink href="/women">
+            <NavWrapper>
+              <NavText>Women</NavText>
+              <NavTextBold>Women</NavTextBold>
+            </NavWrapper>
+          </NavLink>
+          <NavLink href="/kids">
+            <NavWrapper>
+              <NavText>Kids</NavText>
+              <NavTextBold>Kids</NavTextBold>
+            </NavWrapper>
+          </NavLink>
+          <NavLink href="/collections">
+            <NavWrapper>
+              <NavText>Collections</NavText>
+              <NavTextBold>Collections</NavTextBold>
+            </NavWrapper>
+          </NavLink>
         </DesktopNav>
         <MobileActions>
           <ShoppingBagButton>
@@ -120,10 +150,30 @@ const NavLink = styled.a`
   text-decoration: none;
   color: var(--color-gray-900);
   font-weight: ${WEIGHTS.medium};
-
+  overflow: hidden;
+  position: relative;
   &:first-of-type {
     color: var(--color-secondary);
   }
 `;
+
+const NavText = styled.span`
+  display: inline-block;
+  transition:         transform 0.2s;
+        `
+const NavTextBold = styled.span`
+  position: absolute;
+  font-weight: bold;
+  transform: translateY(0%);
+  transition: transform 0.2s;
+  &:hover {
+    transform: traslateY(0);
+  }
+  `
+  const NavWrapper = styled.span`
+    &:hover > ${NavText} {
+      transform: translateY(-100%)
+    }
+  `
 
 export default Header;

@@ -73,16 +73,18 @@ const Link = styled.a`
   color: inherit;
 `;
 
-const Wrapper = styled.article``;
+const Wrapper = styled.article`
+`;
 
 const ImageWrapper = styled.div`
+  border-radius: 16px 16px 4px 4px;
   position: relative;
   overflow: hidden;
+  line-height:0;
 `;
 
 const Image = styled.img`
   width: 100%;
-  border-radius: 16px 16px 4px 4px;
   transition: transform .5s;
   transform-origin: 50% 80%;
   &:hover {
